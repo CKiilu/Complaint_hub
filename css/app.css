@@ -1,7 +1,29 @@
 /******************************************************************GENERAL*********************************************************************************/
 
 body {
-  background: #293f50;
-  color: #888;
-  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #293f50;
+    color: #888;
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/******************************************************************Hero*********************************************************************************/
+
+.hero {
+    position: relative;
+    width: 100%;
+}
+.main {
+    position: absolute;
+    width: 60%;
+    right: 20%;
+    margin-top: 10%;
+    border: 1px solid white;
+}
+.button.large {
+    font-size: 1.25rem;
+    margin-left: 39%;
+    margin-top: 4%;
+}
+label {
+    font-size: 1.875rem;
 }
