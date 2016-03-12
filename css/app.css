@@ -1,7 +1,7 @@
 /******************************************************************GENERAL*********************************************************************************/
 
 body {
-    background: #293f50;
+    background: url(../img/bg_image.png) repeat center fixed;
     color: #888;
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -13,9 +13,14 @@ body {
     width: 100%;
 }
 .main {
+    background-color: #800080;
     position: absolute;
-    width: 60%;
+    /*
+    width: 300px;
     right: 20%;
+*/
+    margin: 13em auto 0;
+    width: 22%;
     margin-top: 10%;
     border: 1px solid white;
 }
@@ -26,4 +31,7 @@ body {
 }
 label {
     font-size: 1.875rem;
+}
+.button {
+    background: #62ba17;
 }
