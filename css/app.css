@@ -17,6 +17,7 @@ body {
 */
 
 .main {
+    height: 410px;
     background-color: #800080;
     /*    position: absolute;*/
     /*
@@ -32,11 +33,25 @@ body {
 }
 .button.large {
     font-size: 1.25rem;
-    margin-left: 39%;
+    margin-left: 70%;
     margin-top: 4%;
+    border-radius: 10px;
+}
+hr {
+    width: 100%;
+    height: 1px;
+    background: #fff
+}
+.loginz {
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    font-size: 2em;
 }
 label {
-    font-size: 1.875rem;
+    color: white;
+    margin-top: 9%;
+    font-size: 1.75rem;
 }
 .button {
     background: #62ba17;
