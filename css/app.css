@@ -8,21 +8,27 @@ body {
 
 /******************************************************************Hero*********************************************************************************/
 
+
+/*
 .hero {
     position: relative;
     width: 100%;
 }
+*/
+
 .main {
     background-color: #800080;
-    position: absolute;
+    /*    position: absolute;*/
     /*
     width: 300px;
     right: 20%;
 */
-    left: 35%;
-    width: 30%;
+    /*    left: 35%;*/
+    /*    width: 500px;
+    */
     margin-top: 10%;
     border: 1px solid white;
+    border-radius: 10px;
 }
 .button.large {
     font-size: 1.25rem;
@@ -35,17 +41,7 @@ label {
 .button {
     background: #62ba17;
 }
-@media screen and (max-width: 700px) {
-    main {
-        background-color: #800080;
-        /*        position: absolute;*/
-        /*
-    width: 300px;
-    right: 20%;
-*/
-        left: 0%;
-        width: 100%;
-        margin-top: 10%;
-        border: 1px solid white;
-    }
+.button:hover {
+    background: #800080;
+    border: 1px solid white;
 }
