@@ -27,13 +27,17 @@
 
                 <form name="login">
                     <div class="row">
+                        <h4 class="loginz">Login</h4>
+                        <hr>
                         <div class="large-12 columns">
                             <label>Matric No
                                 <input type="text" placeholder="Enter matric num" name="userid" />
                             </label>
                         </div>
                         <div class="large-12 columns">
-                            <label>Password
+                            <label style="
+    margin-top: 0;
+">Password
                                 <input type="password" placeholder="enter password" name="pswrd" />
                             </label>
                         </div>
@@ -64,11 +68,12 @@
     <script language="javascript">
         function check(form) /*function to check userid & password*/ {
             /*the following code checkes whether the entered userid and password are matching*/
+
             if (form.userid.value == "david" && form.pswrd.value == "kezi") {
                 window.open('http://facebook.com') /*opens the target page while Id & password matches*/
                     //                alert("good")
             } else {
-                alert("Error Password or Username") /*displays error message*/
+                alert("Error correct Password or Username") /*displays error message*/
             }
         }
 
