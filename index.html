@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/animate.css" />
-    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <!--    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>-->
 </head>
 
 <body>
@@ -79,18 +79,20 @@
         }
 
     </script>
-    <script>
-        var Firebase = require("firebase");
-        var myFirebaseRef = new Firebase("https://sogo.firebaseio.com/#-K8RUqXrIQZNvSqhKeDQ|eeb9f945957df277072962f3741eac99");
-        var dave = ref.child("users");
-        dave.set({
-            details: {
-                name: "kezi David",
-                age: "david"
-            }
-        })
+    <!--
+  <script>
+    var Firebase = require("firebase");
+    var ref = new Firebase("https://sogo.firebaseio.com/#-K8RUqXrIQZNvSqhKeDQ|eeb9f945957df277072962f3741eac99");
 
-    </script>
+    var dave = ref.child("users");
+    dave.set({
+        details: {
+            name: "kezi David",
+            age: "david"
+        }
+    })
+</script>
+-->
 </body>
 
 </html>
