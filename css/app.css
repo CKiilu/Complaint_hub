@@ -19,7 +19,7 @@ body {
 .main {
     height: 410px;
     background-color: #800080;
-    /*    position: absolute;*/
+    position: relative;
     /*
     width: 300px;
     right: 20%;
@@ -33,7 +33,7 @@ body {
 }
 .button.large {
     font-size: 1.25rem;
-    margin-left: 70%;
+    margin-left: 30%;
     margin-top: 4%;
     border-radius: 10px;
 }
