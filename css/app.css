@@ -48,7 +48,7 @@ hr {
     color: white;
     font-size: 2em;
 }
-label {
+.label_heading {
     color: white;
     margin-top: 9%;
     font-size: 1.75rem;
