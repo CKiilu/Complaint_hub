@@ -82,15 +82,13 @@
     <script>
         var Firebase = require("firebase");
         var myFirebaseRef = new Firebase("https://sogo.firebaseio.com/#-K8RUqXrIQZNvSqhKeDQ|eeb9f945957df277072962f3741eac99");
-        myFirebaseRef.set({
-            title: "Hello World!",
-            author: "Firebase",
-            location: {
-                city: "San nigeria",
-                state: "kenya",
-                zip: 94103
+        var dave = ref.child("users");
+        dave.set({
+            details: {
+                name: "kezi David",
+                age: "david"
             }
-        });
+        })
 
     </script>
 </body>
