@@ -84,6 +84,9 @@ hr {
     margin-top: 5%;
     border: 0.5px solid black;
 }
+instruction_home {
+    margin-top: 5%;
+}
 .top-bar,
 .top-bar ul {
     background-color: transparent;
