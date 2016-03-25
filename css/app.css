@@ -66,6 +66,7 @@ hr {
 
 /******************************************************************Home_BODY*********************************************************************************/
 
+.acad_body,
 .home_body,
 .admin_body {
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
