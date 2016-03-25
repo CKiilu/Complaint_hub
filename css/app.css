@@ -1,13 +1,16 @@
 /******************************************************************GENERAL*********************************************************************************/
 
-body {
+.row {
+    max-width: none;
+}
+
+/******************************************************************index*********************************************************************************/
+
+.body_index {
     background: url(../img/bg_image.png) repeat center fixed;
     color: #888;
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-/******************************************************************Hero*********************************************************************************/
-
 
 /*
 .hero {
@@ -64,8 +67,21 @@ hr {
 /******************************************************************Home_BODY*********************************************************************************/
 
 .home_body {
+    background-color: beige;
     margin: auto 5%;
 }
 .home_header {
-    height: 50px;
+    height: 100px;
+}
+.holder {
+    border: 0.5px solid black;
+    height: 200px;
+}
+.home_intro {
+    padding: 5%;
+    margin-top: 5%;
+    border: 0.5px solid black;
+}
+.top-bar {
+    background-color: transparent;
 }
