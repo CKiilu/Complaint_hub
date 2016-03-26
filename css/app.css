@@ -99,7 +99,8 @@ h1 {
 }
 .x {
     /*    margin: 1em 0;*/
-    display: none
+    display: none;
+    padding: 5%;
 }
 .options {
     margin-top: 10%;
