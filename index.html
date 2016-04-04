@@ -51,22 +51,26 @@
 
 
             </div>
-            <div class=" small-2 medium-4 large-4 column ">
-                <!--                <p> </p>-->
-                <form action="https://formspree.io/david.kezi@yahoo.com" method="POST">
-                    <input type="text" name="name">
-                    <input type="email" name="_replyto">
-                    <input type="submit" value="Send">
-                </form>
+            <!--
+       <div class=" small-2 medium-4 large-4 column ">
+    <p> </p>
+    <form action="https://formspree.io/david.kezi@yahoo.com" method="POST">
+        <input type="text" name="name">
+        <input type="email" name="_replyto">
+        <input type="submit" value="Send">
+    </form>
 
+</div>
+-->
+            <div class=" small-2 medium-4 large-4 column ">
+                <p> </p>
             </div>
         </div>
     </section>
 
 
 
-    <footer>
-    </footer>
+
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
     <script src="js/foundation.min.js"></script>
@@ -76,7 +80,7 @@
             /*the following code checkes whether the entered userid and password are matching*/
 
             if (form.userid.value == "david" && form.pswrd.value == "kezi") {
-                window.open('form.html', "_self") /*opens the target page while Id & password matches*/
+                window.open('home.html', "_self") /*opens the target page while Id & password matches*/
                     //                alert("good")
             } else {
                 alert("Error correct Password or Username") /*displays error message*/
