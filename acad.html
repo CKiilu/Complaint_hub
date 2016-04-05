@@ -44,10 +44,10 @@
 
     <select id="reportsSelect">
         <option value="blank" id="blank" onclick="show(this)"></option>
-        <option value="imaging" id="imaging" onclick="show(this)">Imaging Request</option>
-        <option value="inventory" id="inventory" onclick="show(this)">Inventory</option>
-        <option value="chargeback" id="chargeback" onclick="show(this)">Chargeback</option>
-        <option value="studentJobAccount" id="studentJobAccount" onclick="show(this)">Student Job Account</option>
+        <option value="imaging" id="imaging" onclick="show(this)">Portal Issues</option>
+        <option value="inventory" id="inventory" onclick="show(this)">Student Make Up</option>
+        <option value="chargeback" id="chargeback" onclick="show(this)">Result Validation</option>
+        <option value="studentJobAccount" id="studentJobAccount" onclick="show(this)">Student Request</option>
     </select>
     <div class="options">
         <div class="x" id="imagingDiv">
@@ -57,7 +57,8 @@
 -->
             <form action="https://formspree.io/david.kezi@yahoo.com" method="POST">
 
-                <input type="email" name="_replyto" placeholder="email">
+                <!--                <input type="email" name="_replyto" placeholder="email">-->
+                <input type="hidden" name="_next" value="http://message1234.bitballoon.com" />
                 <input type="text" name="name" placeholder=" message">
                 <input type="submit" value="Send">
             </form>
