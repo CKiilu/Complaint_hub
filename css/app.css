@@ -3,6 +3,9 @@
 .row {
     max-width: none;
 }
+.top-bar {
+    margin: 0;
+}
 
 /******************************************************************index*********************************************************************************/
 
@@ -20,25 +23,22 @@
 */
 
 .main {
-    height: 410px;
+    max-width: 500px;
+    height: 440px;
     background-color: #800080;
-    position: relative;
-    /*
-    width: 300px;
-    right: 20%;
-*/
-    /*    left: 35%;*/
-    /*    width: 500px;
-    */
+    /*    position: absolute;*/
     margin-top: 10%;
     border: 1px solid white;
     border-radius: 10px;
 }
 .button.large {
     font-size: 1.25rem;
-    margin-left: 50%;
+    margin-left: 56%;
     margin-top: 4%;
     border-radius: 10px;
+    left: 55%;
+}
+
 }
 hr {
     width: 100%;
@@ -65,7 +65,6 @@ hr {
 }
 
 /******************************************************************Home_BODY*********************************************************************************/
-
 .faq_body,
 .acad_body,
 .home_body,
@@ -99,10 +98,21 @@ h1 {
 }
 .x {
     /*    margin: 1em 0;*/
+
     display: none;
     padding: 5%;
 }
 .options {
     margin-top: 10%;
     border: 0.5px solid black;
+}
+
+/******************************************************************message*********************************************************************************/
+.thanks {
+    margin: 10% 20%;
+}
+.thanks h1 {
+    font-size: 5rem;
+    align-content: center;
+    text-align: center;
 }
