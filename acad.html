@@ -43,64 +43,46 @@
     <h1>Academic Complaint section</h1>
     <h5>Please pick the concerned party to forward your complaint too</h5>
 
-        <div class="row">
-            <a href="acad.html">
-                <div class="small-12 medium-6 large-6 column holder">
+    <div class="row">
+        <a href="acad.html">
+            <div class="small-12 medium-6 large-6 column holder">
 
-                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">
-                    <p>ACADEMICS</p>
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">-->
+                <p>Students Make up</p>
 
-                </div>
-            </a>
+            </div>
+        </a>
 
-            <a href="admin.html">
-                <div class="small-12 medium-6 large-6 column holder">
+        <a href="portal_validation.html">
+            <div class="small-12 medium-6 large-6 column holder">
 
-                    <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">
-                    <p>ADMINISTRATION</p>
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">-->
+                <p>Portal Issues</p>
 
-                </div>
-            </a>
-        </div>
-
-
-    <select id="reportsSelect">
-        <option value="blank" id="blank" onclick="show(this)"></option>
-        <option value="imaging" id="imaging" onclick="show(this)">Portal Issues</option>
-        <option value="inventory" id="inventory" onclick="show(this)">Student Make Up</option>
-        <option value="chargeback" id="chargeback" onclick="show(this)">Result Validation</option>
-        <option value="studentJobAccount" id="studentJobAccount" onclick="show(this)">Student Request</option>
-    </select>
-    <div class="options">
-        <div class="x" id="imagingDiv">
-            <!--
-            <h1>imagingDiv</h1>
-            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
--->
-            <form action="https://formspree.io/david.kezi@yahoo.com" method="POST">
-
-                <!--                <input type="email" name="_replyto" placeholder="email">-->
-
-
-                <!--                redirect to  -->
-                <input type="hidden" name="_next" value="http://message1234.bitballoon.com " />
-                <input type="text" name="name" placeholder=" message">
-                <input type="submit" value="Send">
-            </form>
-        </div>
-        <div class="x" id="inventoryDiv">
-            <h1>inventoryDiv</h1>
-            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-        </div>
-        <div class="x" id="chargebackDiv">
-            <h1>chargebackDiv</h1>
-            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-        </div>
-        <div class="x" id="studentJobAccountDiv">
-            <h1>studentJobAccountDiv</h1>
-            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-        </div>
+            </div>
+        </a>
     </div>
+    <div class="row">
+        <a href="acad.html">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">-->
+                <p>Special Requests</p>
+
+            </div>
+        </a>
+
+        <a href="portal_validation.html">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--               <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">-->
+                <p>Result Verification</p>
+
+            </div>
+        </a>
+    </div>
+
+
     <footer>
     </footer>
     <script src="js/vendor/jquery.min.js"></script>
@@ -108,20 +90,6 @@
     <script src="js/foundation.min.js"></script>
     <script src="js/app.js"></script>
 
-    <script>
-        $(function() {
-            $.fn.showField = function() {
-                var selectVal = document.getElementById(this.val() + 'Div');
-                return this.each(function() {
-                    $(selectVal).show().siblings('div').hide();
-                });
-            };
-            $('select#reportsSelect').change(function() {
-                $(this).showField();
-            });
-        });
-
-    </script>
 </body>
 
 </html>
