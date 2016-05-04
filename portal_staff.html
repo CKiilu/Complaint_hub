@@ -34,7 +34,7 @@
                     <li><a href="home.html">HOME</a></li>
                     <li><a href="acad.html">ACADEMICS</a></li>
                     <li><a href="admin.html">ADMINISITRATIVE</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="faq.html">staff login</a></li>
                 </ul>
             </div>
             <hr>
@@ -81,6 +81,27 @@
                     $('#messagesDiv')[0].scrollTop =
                         $('#messagesDiv')[0].scrollHeight;
                         */
+
+            $('#messagesDiv').append($('<div style="border: 1px solid black; margin-bottom:5%; padding: 5%;"></div>')
+                .append($('<p/>').text('name: ' + name))
+                .append($('<p/>').text('matric: ' + matric))
+                .append($('<p/>').text('level: ' + level))
+                .append($('<p/>').text('department: ' + department))
+                .append($('<p/>').text('program: ' + program))
+                .append($('<p/>').text('semester: ' + semester))
+                .append($('<p/>').text('session: ' + session))
+                .append($('<p/>').text('course: ' + course))
+                .append($('<p/>').text('complain: ' + complain))
+                .append($('<p/><br>').text('lecturer: ' + lecturer))
+                .append($('<hr style="max-width:100%>'))
+            );
+
+
+            $('#messagesDiv')[0].scrollTop =
+                $('#messagesDiv')[0].scrollHeight;
+
+
+
         };
 
     </script>
