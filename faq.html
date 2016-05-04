@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complaint Hub-FAQ</title>
+    <title>Complaint Hub</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
@@ -13,39 +13,62 @@
     <!--    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>-->
 </head>
 
-<body class="faq_body">
+<body class="body_index">
     <header>
-        <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">Menu</div>
-        </div>
-
-        <div class="top-bar" id="example-menu">
-            <div class="top-bar-left">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <img src="img/cu_logo.png">
-                    <!--                    <li class="menu-text">Site Title</li>-->
-
-                </ul>
-            </div>
-            <div class="top-bar-right">
-                <ul class="vertical medium-horizontal menu">
-                    <li><a href="home.html">HOME</a></li>
-                    <li><a href="acad.html">ACADEMICS</a></li>
-                    <li><a href="admin.html">ADMINISITRATIVE</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <hr>
     </header>
 
 
-    <footer>
-    </footer>
+    <section class=" hero">
+        <div class="row">
+            <div class="small-12 medium-6 small-centered large-centered columns main">
+                <form name="login">
+                    <div class="row">
+                        <h4 class="loginz">Staff Login</h4>
+                        <hr>
+                        <div class="large-12 columns">
+                            <label class="label_heading">Matric No
+                                <input type="text" placeholder="Enter matric num" name="userid" />
+                            </label>
+                        </div>
+                        <div class="large-12 columns">
+                            <label class="label_heading" style="
+    margin-top: 0;
+">Password
+                                <input type="password" placeholder="enter password" name="pswrd" />
+                            </label>
+                        </div>
+                        <!--                        <input type="button" onclick="check(this.form)" value="Login" />-->
+                        <!--                        <input type="reset" value="Cancel" />-->
+
+                        <button style="width: 40%;" onclick="check(this.form)" value="Login" class="button large" type="button">Enter
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+
+
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/app.js"></script>
+    <script language="javascript">
+        function check(form) /*function to check userid & password*/ {
+            /*the following code checkes whether the entered userid and password are matching*/
+
+            if (form.userid.value == "david" && form.pswrd.value == "kezi") {
+                window.open('home.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else {
+                alert("Error correct Password or Username") /*displays error message*/
+            }
+        }
+
+    </script>
 
 </body>
 
