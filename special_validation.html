@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complaint Hub- Portal Validation</title>
+    <title>Special Request Validation</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
@@ -40,7 +40,7 @@
             <hr>
         </div>
     </header>
-    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Portal Issues Resolution Form</h1>
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Special Request Form</h1>
 
     <section>
         <form>
@@ -126,7 +126,7 @@
     <footer>
     </footer>
     <script>
-        var test = new Firebase("https://testsingz.firebaseio.com/portal/");
+        var test = new Firebase("https://testsingz.firebaseio.com/special/");
         $("#lecturerInput").keypress(function(e) {
             if (e.keyCode == 13) {
                 var name = $("#nameInput").val();
