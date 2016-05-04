@@ -40,7 +40,7 @@
             <hr>
         </div>
     </header>
-    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Portal Issues Resolution Form</h1>
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Make-Up Request Resolution Form</h1>
 
 
     <h3>This are the pending requests for student validation.</h3>
@@ -53,7 +53,7 @@
     <footer>
     </footer>
     <script>
-        var test = new Firebase("https://testsingz.firebaseio.com/portal/");
+        var test = new Firebase("https://testsingz.firebaseio.com/make_up/");
         test.on("child_added", function(snapshot) {
             var message = snapshot.val();
             displayComplainMessage(message.name, message.matric, message.level, message.department, message.program, message.semester, message.session, message.course, message.complain, message.lecturer);

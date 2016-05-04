@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complaint Hub- Portal Staff</title>
+    <title>Complaint Hub- Result Staff</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
@@ -40,7 +40,7 @@
             <hr>
         </div>
     </header>
-    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Portal Issues Resolution Form</h1>
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Result Re-Validation Form</h1>
 
 
     <h3>This are the pending requests for student validation.</h3>
@@ -53,7 +53,7 @@
     <footer>
     </footer>
     <script>
-        var test = new Firebase("https://testsingz.firebaseio.com/portal/");
+        var test = new Firebase("https://testsingz.firebaseio.com/result/");
         test.on("child_added", function(snapshot) {
             var message = snapshot.val();
             displayComplainMessage(message.name, message.matric, message.level, message.department, message.program, message.semester, message.session, message.course, message.complain, message.lecturer);
@@ -91,7 +91,7 @@
                 .append($('<p/>').text('semester: ' + semester))
                 .append($('<p/>').text('session: ' + session))
                 .append($('<p/>').text('course: ' + course))
-                .append($('<p/>').text('request: ' + complain))
+                .append($('<p/>').text('Complain: ' + complain))
                 .append($('<p/><br>').text('lecturer: ' + lecturer))
                 .append($('<hr style="max-width:100%>'))
             );
