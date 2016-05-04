@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+</head>
+
+<body>
+    <div id='messagesDiv'>
+
+    </div>
+
+    <style>
+        em {
+            color: aqua;
+        }
+        
+        p {
+            display: inline-block;
+        }
+
+    </style>
+    <script>
+        var myDataRef = new Firebase('https://ifeq0znumiv.firebaseio-demo.com/');
+        myDataRef.on('child_added', function(snapshot) {
+            var message = snapshot.val();
+            displayChatMessage(message.name, message.text);
+        });
+
+        function displayChatMessage(name, text) {
+            $('<div/>').prepend($('<p/>').text(text)).prepend($('<p/>').text(name + ': ')).appendTo($('#messagesDiv'));
+            $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+        };
+
+    </script>
+    var name = $("#nameInput").val(); var matric = $("#matricInput").val(); var level = $("#levelInput").val(); var department = $("#departmentInput").val(); var program = $("#programInput").val(); var semester = $("#semesterInput").val(); var session = $("#sessionInput").val(); var course = $("#courseInput").val(); var complain = $("#complainInput").val(); var lecturer = $("#lecturerInput").val();
+
+</body>
+
+</html>
