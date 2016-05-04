@@ -79,6 +79,14 @@ hr {
 .holder {
     border: 0.5px solid black;
     height: 200px;
+    font-size: 2em;
+}
+.holder:hover {
+    background-color: grey;
+    opacity: 0.8;
+    color: white;
+    font-weight: 900;
+    font-size: 2em;
 }
 .home_intro {
     padding: 5%;
