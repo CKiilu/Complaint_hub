@@ -59,7 +59,6 @@
     <script language="javascript">
         function check(form) /*function to check userid & password*/ {
             /*the following code checkes whether the entered userid and password are matching*/
-
             if (form.userid.value == "david" && form.pswrd.value == "kezi") {
                 window.open('home.html', "_self") /*opens the target page while Id & password matches*/
                     //                alert("good")
@@ -75,11 +74,22 @@
             } else if (form.userid.value == "makeup" && form.pswrd.value == "admin") {
                 window.open('make_up_staff.html', "_self") /*opens the target page while Id & password matches*/
                     //                alert("good")
+            } else if (form.userid.value == "exeat" && form.pswrd.value == "admin") {
+                window.open('exeat_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "workstudy" && form.pswrd.value == "admin") {
+                window.open('work_study_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "adminspecial" && form.pswrd.value == "admin") {
+                window.open('special_admin_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "ppd" && form.pswrd.value == "admin") {
+                window.open('PPD_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
             } else {
                 alert("Error correct Password or Username") /*displays error message*/
             }
         }
-
     </script>
 
 </body>
