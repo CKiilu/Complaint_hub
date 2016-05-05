@@ -20,14 +20,6 @@ hr {
     color: #888;
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-/*
-.hero {
-    position: relative;
-    width: 100%;
-}
-*/
-
 .main {
     max-width: 500px;
     height: 440px;
@@ -43,8 +35,6 @@ hr {
     margin-top: 4%;
     border-radius: 10px;
     left: 55%;
-}
-
 }
 hr {
     width: 100%;
@@ -71,6 +61,7 @@ hr {
 }
 
 /******************************************************************Home_BODY*********************************************************************************/
+
 .faq_body,
 .acad_body,
 .home_body,
@@ -111,8 +102,6 @@ h1 {
     font-size: 2em
 }
 .x {
-    /*    margin: 1em 0;*/
-
     display: none;
     padding: 5%;
 }
@@ -122,6 +111,7 @@ h1 {
 }
 
 /******************************************************************message*********************************************************************************/
+
 .thanks {
     margin: 10% 20%;
 }
@@ -132,12 +122,11 @@ h1 {
 }
 
 /******************************************************************contactus*********************************************************************************/
+
 .contactus {
     max-width: 500px;
     height: 440px;
     background-color: beige;
-    /*    position: absolute;*/
-
     padding-left: 5%;
     margin-top: 10%;
     border: 1px solid beige;
