@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- Make -up Validation{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Make-Up Request Form</h1>
+
+    <section>
+        <form method="POST" action="">
+            {{ form.non_field_errors }}
+            <div class="row">
+                <div class="medium-6 columns">
+                {{ form.matric.errors }}
+                    <label>Matric
+                        {{ form.matric }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                {{ form.level.errors }}
+                    <label>Level
+                        {{ form.level }}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-12 columns">
+                {{ form.department.errors }}
+                    <label>Department
+                        {{ form.department }}
+                    </label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="medium-12 columns">
+                {{ form.program.errors }}
+                    <label>Program
+                        {{ form.program }}
+                    </label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                {{ form.semester.errors }}
+                    <label>Semester
+                        {{ form.semester }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                {{ form.session.errors }}
+                    <label>Session
+                        {{ form.session }}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                {{ form.course.errors }}
+                    <label>Course
+                        {{ form.course }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                {{ form.course_lecturer.errors }}
+                    <label>Course Lecturer(s)
+                        {{ form.course_lecturer }}
+                    </label>
+                </div>
+            </div>         
+            <label>
+            {{ form.request.errors }}
+                Request
+                {{ form.request }}
+            </label>
+            <button style="margin-left:1rem" type="button" class="success button" id="sendButton">Submit</button>
+        </form>
+
+    </section>
+
+{% endblock %}

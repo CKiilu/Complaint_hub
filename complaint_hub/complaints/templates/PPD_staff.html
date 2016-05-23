@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- PPD Staff{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student PPD Request Resolution Form</h1>
+
+
+    <h3>This are the pending requests for student validation.</h3>
+
+    <div id="messagesDiv">
+
+    </div>
+
+
+    <footer>
+    </footer>
+    <script>
+        var test = new Firebase("https://testsingz.firebaseio.com/PPD/");
+        test.on("child_added", function(snapshot) {
+            var message = snapshot.val();
+            displayComplainMessage(message.name, message.matric, message.level, message.Hall, message.Room, message.Site, message.complain);
+        });
+        function displayComplainMessage(name, matric, level, Hall, Room, Site, complain) {
+            //            $('<div/>').prepend($('<p/>').text(matric)).prepend($('<p/>').text('name:' + name)).appendTo($('#messagesDiv'));
+            //            $('#messagesDiv')[0].scrollTop =
+            //                $('#messagesDiv')[0].scrollHeight;
+            //
+            /*
+                            USING APPEND instead of PREPEND
+                    $('#messagesDiv').append($('<div/>')
+                        .append($('<p/>').text('name: ' + name))
+                        .append($('<p/>').text('level: ' + level))
+                        .append($('<p style="border-bottom: 1px solid black;"></p>').text('matric: ' + matric)));
+                    $('#messagesDiv')[0].scrollTop =
+                        $('#messagesDiv')[0].scrollHeight;
+                        */
+            $('#messagesDiv').append($('<div style="border: 1px solid black; margin-bottom:5%; padding: 5%;"></div>')
+                .append($('<p/>').text('name: ' + name))
+                .append($('<p/>').text('matric: ' + matric))
+                .append($('<p/>').text('level: ' + level))
+                .append($('<p/>').text('Hall: ' + Hall))
+                .append($('<p/>').text('Room: ' + Room))
+                .append($('<p/>').text('Site: ' + Site))
+                .append($('<p/>').text('request: ' + complain))
+                .append($('<hr style="max-width:100%>'))
+            );
+            $('#messagesDiv')[0].scrollTop =
+                $('#messagesDiv')[0].scrollHeight;
+        };
+    </script>
+{% endblock %}

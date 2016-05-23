@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaint Hub- Portal Staff</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+</head>
+
+<body class="home_body">
+    <header>
+        <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
+        </div>
+
+        <div class="top-bar" id="example-menu">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <img class="cu_logo" src="img/cu_logo.png">
+                    <!--                    <li class="menu-text">Site Title</li>-->
+
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="vertical medium-horizontal menu">
+                    <li><a href="faq.html">CONTACT US</a></li>
+                    <li><a href="index.html">LOGOUT</a></li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </header>
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Portal Issues Resolution Form</h1>
+
+
+    <h3>This are the pending requests for student validation.</h3>
+
+    <div id="messagesDiv">
+
+    </div>
+
+
+    <footer>
+    </footer>
+    <script>
+        var test = new Firebase("https://testsingz.firebaseio.com/portal/");
+        test.on("child_added", function(snapshot) {
+            var message = snapshot.val();
+            displayComplainMessage(message.name, message.matric, message.level, message.department, message.program, message.semester, message.session, message.course, message.complain, message.lecturer);
+        });
+
+        function displayComplainMessage(name, matric, level, department, program, semester, session, course, complain, lecturer) {
+            //            $('<div/>').prepend($('<p/>').text(matric)).prepend($('<p/>').text('name:' + name)).appendTo($('#messagesDiv'));
+            //            $('#messagesDiv')[0].scrollTop =
+            //                $('#messagesDiv')[0].scrollHeight;
+            //
+
+
+
+
+            /*
+
+                            USING APPEND instead of PREPEND
+
+                    $('#messagesDiv').append($('<div/>')
+                        .append($('<p/>').text('name: ' + name))
+                        .append($('<p/>').text('level: ' + level))
+                        .append($('<p style="border-bottom: 1px solid black;"></p>').text('matric: ' + matric)));
+
+
+                    $('#messagesDiv')[0].scrollTop =
+                        $('#messagesDiv')[0].scrollHeight;
+                        */
+
+            $('#messagesDiv').append($('<div style="border: 1px solid black; margin-bottom:5%; padding: 5%;"></div>')
+                .append($('<p/>').text('name: ' + name))
+                .append($('<p/>').text('matric: ' + matric))
+                .append($('<p/>').text('level: ' + level))
+                .append($('<p/>').text('department: ' + department))
+                .append($('<p/>').text('program: ' + program))
+                .append($('<p/>').text('semester: ' + semester))
+                .append($('<p/>').text('session: ' + session))
+                .append($('<p/>').text('course: ' + course))
+                .append($('<p/>').text('request: ' + complain))
+                .append($('<p/><br>').text('lecturer: ' + lecturer))
+                .append($('<hr style="max-width:100%>'))
+            );
+
+
+            $('#messagesDiv')[0].scrollTop =
+                $('#messagesDiv')[0].scrollHeight;
+
+
+
+        };
+
+    </script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

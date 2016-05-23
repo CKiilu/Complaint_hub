@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaint Hub</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <!--    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>-->
+</head>
+
+<body class="body_index">
+    <header>
+    </header>
+
+
+    <section class=" hero">
+        <div class="row">
+            <div class="small-12 medium-6 small-centered large-centered columns main">
+                <form name="login">
+                    <div class="row">
+                        <h4 class="loginz">Login</h4>
+                        <hr>
+                        <div class="large-12 columns">
+                            <label class="label_heading">Username
+                                <input type="text" placeholder="Enter matric num" name="userid" />
+                            </label>
+                        </div>
+                        <div class="large-12 columns">
+                            <label class="label_heading" style="
+    margin-top: 0;
+">Password
+                                <input type="password" placeholder="enter password" name="pswrd" />
+                            </label>
+                        </div>
+                        <!--                        <input type="button" onclick="check(this.form)" value="Login" />-->
+                        <!--                        <input type="reset" value="Cancel" />-->
+
+                        <button style="width: 40%;" onclick="check(this.form)" value="Login" class="button large" type="button">Enter
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+    <script language="javascript">
+        function check(form) /*function to check userid & password*/ {
+            /*the following code checkes whether the entered userid and password are matching*/
+            if (form.userid.value == "david" && form.pswrd.value == "kezi") {
+                window.open('home.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "portal" && form.pswrd.value == "admin") {
+                window.open('portal_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "result" && form.pswrd.value == "admin") {
+                window.open('result_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "special" && form.pswrd.value == "admin") {
+                window.open('special_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "makeup" && form.pswrd.value == "admin") {
+                window.open('make_up_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "exeat" && form.pswrd.value == "admin") {
+                window.open('exeat_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "workstudy" && form.pswrd.value == "admin") {
+                window.open('work_study_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "adminspecial" && form.pswrd.value == "admin") {
+                window.open('special_admin_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else if (form.userid.value == "ppd" && form.pswrd.value == "admin") {
+                window.open('PPD_staff.html', "_self") /*opens the target page while Id & password matches*/
+                    //                alert("good")
+            } else {
+                alert("Error correct Password or Username") /*displays error message*/
+            }
+        }
+    </script>
+
+</body>
+
+</html>

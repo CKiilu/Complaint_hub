@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- Exeat Application{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Exeat Application Form</h1>
+
+    <section>
+        <form>
+            <div class="row">
+                <div class="medium-12 columns">
+                    <label>Name
+                        <input type="text" placeholder="e.g John Doe" id="nameInput">
+                    </label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                    <label>Matric
+                        <input type="text" placeholder="" id="matricInput">
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                    <label>Level
+                        <input type="text" placeholder="" id="levelInput">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-12 columns">
+                    <label>Department
+                        <input type="text" placeholder="" id="departmentInput">
+                    </label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="medium-12 columns">
+                    <label>Program
+                        <input type="text" placeholder="" id="programInput">
+                    </label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                    <label>Exeat Type
+                        <input type="text" placeholder="" id="ExeatInput">
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                    <label>Destination
+                        <input type="text" placeholder="" id="DestinationInput">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                    <label>Course
+                        <input type="text" placeholder="" id="courseInput">
+                    </label>
+                </div>
+                <!--
+        <div class="medium-6 columns">
+    <label>Date
+        <input type="text" placeholder="">
+    </label>
+</div>
+-->
+            </div>
+            <label>
+                Application
+                <textarea placeholder="Input Your Request Here" style="height: 240px; padding: 0px; margin-left: 1rem; width: 96.5%;" id="ApplicationInput"></textarea>
+            </label>
+
+            <div class="row">
+                <div class="medium-12 columns">
+                    <label>Parent's Contact
+                        <input type="text" placeholder="" id="ContactInput">
+                    </label>
+                </div>
+            </div>
+            <button style="margin-left:1rem;" type="button" class="success button" id="sendButton">Submit</button>
+        </form>
+
+    </section>
+
+{% endblock %}
