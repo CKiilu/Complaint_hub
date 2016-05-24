@@ -130,11 +130,22 @@ def get_course_choices(request):
 	if request.is_ajax():
 		p_id = request.GET.get('p_id')
 		data = {}
-		courses = Program.objects.get(id=p_id).courses.values('courses')
-		course_id = 1
+		courses = Program.objects.get(id=p_id).courses.values()
+		
 		for course in courses:
-			data[course_id] = course['courses']
-			course_id += 1
+			data[course['id']] = course['courses']
+			
+		json = simplejson.dumps(data)
+		return HttpResponse(json, content_type='application/json')
+		
+def get_program(request):
+	if request.is_ajax():
+		d_id = request.GET.get('d_id')
+		data = {}
+		programs = Department.objects.get(id=d_id).programs.values()
+		
+		for program in programs:
+			data[program['id']] = program['program']
 			
 		json = simplejson.dumps(data)
 		return HttpResponse(json, content_type='application/json')

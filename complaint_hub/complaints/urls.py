@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'^administrative/PPD/$', ppd, name='ppd'),
     url(r'^administrative/special$', admin_special, name='admin_special'),
     url(r'^course_choices/$', get_course_choices, name='get_course_choices'),
+    url(r'^program_choices/$', get_program, name='get_program'),
     url(r'^faq/$', faq, name='faq'),
 ]
