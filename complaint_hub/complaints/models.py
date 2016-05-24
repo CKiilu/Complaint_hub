@@ -6,18 +6,27 @@ from django.utils import timezone
 
 # Create your models here.
 EXEAT_TYPES = (
-	('Home', 'Home'),
-	('Other', 'Other'),
+	('1', 'Home'),
+	('2', 'Other'),
 	)
 
+SEMESTERS = (
+	('1', 'First Semester'),
+	('2', 'Second Semester')
+	)
 
+LEVELS = (
+	('1', 'First Year'),
+	('2', 'Second Year'),
+	('3', 'Third Year'),
+	('4', 'Fourth Year'),
+	('5', 'Fifth Year')
+	)
 
-class UserType(models.Model):
-	"""Types of users"""
-	category = models.CharField(max_length=30)
-
-	def __unicode__(self):
-		return self.category
+USER_TYPES = (
+	('1', 'Student'),
+	('2', 'Staff')
+	)
 
 class RequestType(models.Model):
 	"""Types of requests"""
@@ -33,9 +42,17 @@ class Course(models.Model):
 	def __unicode__(self):
 		return self.courses
 
+class Program(models.Model):
+	"""Types of users"""
+	program = models.CharField(max_length=60)
+	courses = models.ManyToManyField(Course)
+
+	def __unicode__(self):
+		return self.program
+
 class Department(models.Model):
 	department = models.CharField(max_length=50)
-	courses = models.ManyToManyField(Course)
+	programs = models.ManyToManyField(Program)
 
 	def __unicode__(self):
 		return self.department
@@ -46,8 +63,12 @@ class UserProfile(models.Model):
 	user = models.OneToOneField(
 		settings.AUTH_USER_MODEL,
 		on_delete=models.CASCADE)
-	category = models.OneToOneField(
-		'UserType',
+	matric = models.CharField(max_length=10)
+	category = models.CharField(max_length=50, choices=USER_TYPES)
+	full_name = models.CharField(max_length=50)
+	level = models.CharField(max_length=50, choices=LEVELS)
+	program = models.ForeignKey(
+		'Program',
 		on_delete=models.CASCADE)
 
 
@@ -59,18 +80,18 @@ class AcademicComplaint(models.Model):
 	user = models.ForeignKey(
 		'UserProfile',
 		on_delete=models.CASCADE)
-	matric = models.CharField(max_length=50)
-	level = models.CharField(max_length=50)
+	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
 		'Department',
 		on_delete=models.CASCADE
 		)
-	program = models.CharField(max_length=50)
-	semester = models.CharField(max_length=50)
+	semester = models.CharField(max_length=50, choices=SEMESTERS)
 	session = models.CharField(max_length=50)
-	course = models.ForeignKey(
-		'Course',
-		on_delete=models.CASCADE,)
+	program = models.ForeignKey(
+		'Program',
+		on_delete=models.CASCADE,
+		null=True)
+	course = models.CharField(max_length=50)
 	request_type = models.ForeignKey(
 		'RequestType',
 		on_delete=models.CASCADE)
@@ -85,12 +106,11 @@ class Exeat(models.Model):
 	user = models.ForeignKey(
 		'UserProfile',
 		on_delete=models.CASCADE)
-	level = models.CharField(max_length=50)
+	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
 		'Department',
 		on_delete=models.CASCADE
 		)
-	program = models.CharField(max_length=50)
 	exeat_type = models.CharField(max_length=50, choices=EXEAT_TYPES)
 	destination = models.CharField(max_length=50)
 	application = models.TextField()
@@ -104,15 +124,15 @@ class WorkStudy(models.Model):
 	user = models.ForeignKey(
 		'UserProfile',
 		on_delete=models.CASCADE)
-	level = models.CharField(max_length=50)
+	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
 		'Department',
 		on_delete=models.CASCADE
 		)
-	program = models.CharField(max_length=50)
-	semester = models.CharField(max_length=50)
+	semester = models.CharField(max_length=50, choices=SEMESTERS)
 	session = models.CharField(max_length=50)
 	application = models.TextField()
+	timestamp = models.DateTimeField(default=timezone.now())
 	
 	def __unicode__(self):
 		return str(self.user) + '-' + self.level 
@@ -121,11 +141,12 @@ class PPD(models.Model):
 	user = models.ForeignKey(
 		'UserProfile',
 		on_delete=models.CASCADE)
-	level = models.CharField(max_length=50)
+	level = models.CharField(max_length=50, choices=LEVELS)
 	hall = models.CharField(max_length=50)
 	room = models.CharField(max_length=50)
 	site = models.CharField(max_length=50)
 	request = models.TextField()
+	timestamp = models.DateTimeField(default=timezone.now())
 	
 	def __unicode__(self):
 		return str(self.user) + '-' + self.hall + ", " + self.room + ", " + self.site
@@ -134,15 +155,15 @@ class SpecialAdmRequest(models.Model):
 	user = models.ForeignKey(
 		'UserProfile',
 		on_delete=models.CASCADE)
-	level = models.CharField(max_length=50)
+	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
 		'Department',
 		on_delete=models.CASCADE
 		)
-	program = models.CharField(max_length=50)
 	hall = models.CharField(max_length=50)
 	room = models.CharField(max_length=50)
 	request = models.TextField()
+	timestamp = models.DateTimeField(default=timezone.now())
 	
 	def __unicode__(self):
 		return str(self.user) 

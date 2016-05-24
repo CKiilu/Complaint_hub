@@ -2,54 +2,40 @@ from django import forms
 
 from .models import *
 
-SEMESTERS = (
-	('1', 'First Semester'),
-	('2', 'Second Semester'),
-	('3', 'Third Semester')
-	)
-
-LEVELS = (
-	('1', 'First Year'),
-	('2', 'Second Year'),
-	('3', 'Third Year'),
-	('4', 'Fourth Year')
-	)
-
-
 class AcademicComplaintForm(forms.ModelForm):
 	class Meta:
 		model = AcademicComplaint
-		fields = [
-		'matric',
-		'level',
-		'department',
-		'program',
-		'semester',
-		'session',
-		'course',
-		'request',
-		'course_lecturer',]
+		exclude = [
+			'user',
+			'timestamp']
 		widgets = {
-		'matric': forms.TextInput(attrs={
-			'class': 'columns'
-			}),
-		'level': forms.Select(attrs={
-			'class': 'columns'
-			},
-			choices=LEVELS
-			),
-		'semester': forms.Select(attrs={
-			'class': 'columns'
-			},
-			choices=SEMESTERS
-			),
-		'course': forms.Select(attrs={
-			'class': 'columns'
-			}),
-		'session': forms.TextInput(attrs={
-			'class': 'columns'
-			}),
-		'request_type': forms.Select(attrs={
-			'class': 'columns'
-			}),
+			'course': forms.Select()
 		}
+		
+class ExeatForm(forms.ModelForm):
+	class Meta:
+		model = Exeat
+		exclude = [
+			'user',
+			'timestamp']
+
+class PPDForm(forms.ModelForm):
+	class Meta:
+		model = PPD
+		exclude = [
+			'user',
+			'timestamp']
+		
+class SpecialAdmRequestForm(forms.ModelForm):
+	class Meta:
+		model = SpecialAdmRequest
+		exclude = [
+			'user',
+			'timestamp']
+		
+class WorkStudyForm(forms.ModelForm):
+	class Meta:
+		model = WorkStudy
+		exclude = [
+			'user',
+			'timestamp']

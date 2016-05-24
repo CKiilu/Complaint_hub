@@ -13,7 +13,8 @@ urlpatterns = [
     url(r'^administrative/$', administrative, name='administrative'),
     url(r'^administrative/exeat/$', exeat, name='exeat'),
     url(r'^administrative/work_study/$', work_study, name='work_study'),
-    url(r'^administrative/PPD/$', PPD, name='PPD'),
+    url(r'^administrative/PPD/$', ppd, name='ppd'),
     url(r'^administrative/special$', admin_special, name='admin_special'),
+    url(r'^course_choices/$', get_course_choices, name='get_course_choices'),
     url(r'^faq/$', faq, name='faq'),
 ]
