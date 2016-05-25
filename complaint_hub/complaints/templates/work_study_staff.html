@@ -18,6 +18,9 @@
     <p>Semester: {{ complaint.semester }}</p>
     <p>Session: {{ complaint.session }}</p>
     <p>Application: {{ complaint.application }}</p>
+    <form method="GET" action="">
+    <button style="float:right;" name="id" value="{{ complaint.id }}">Delete</button>
+    </form>
     <hr style="max-width:100%">
     </div>
 {% endfor %}

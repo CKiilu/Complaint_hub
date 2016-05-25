@@ -19,6 +19,9 @@
     <p>Destination: {{ complaint.destination }}</p>
     <p>Application: {{ complaint.application }}</p>
     <p>Parent's Contact: {{ complaint.parent_contact }}</p>
+    <form method="GET" action="">
+    <button style="float:right;" name="id" value="{{ complaint.id }}">Delete</button>
+    </form>
     <hr style="max-width:100%">
     </div>
 {% endfor %}

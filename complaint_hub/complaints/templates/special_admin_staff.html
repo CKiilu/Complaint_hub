@@ -18,6 +18,9 @@
     <p>Hall: {{ complaint.hall }}</p>
     <p>Room: {{ complaint.room }}</p>
     <p>Request: {{ complaint.request }}</p>
+    <form method="GET" action="">
+    <button style="float:right;" name="id" value="{{ complaint.id }}">Delete</button>
+    </form>
     <hr style="max-width:100%">
     </div>
 {% endfor %}

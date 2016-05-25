@@ -21,6 +21,9 @@
     <p>Course: {{ complaint.course }}</p>
     <p>Request: {{ complaint.request }}</p>
     <p>Lecturer: {{ complaint.course_lecturer }}</p>
+    <form method="GET" action="">
+    <button style="float:right;" name="id" value="{{ complaint.id }}">Delete</button>
+    </form>
     <hr style="max-width:100%">
     </div>
 {% endfor %}
