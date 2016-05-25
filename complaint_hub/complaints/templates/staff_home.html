@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'staff_base.html' %}
 {% load staticfiles %}
 {% block title %}Complaint Hub- Home{% endblock %}
 {% block bdclss %}home_body{% endblock %}
@@ -12,7 +12,7 @@
     <section class="home_main">
 
         <div class="row">
-            <a href="{% url 'acad' %}">
+            <a href="{% url 'staff_acad' %}">
                 <div class="small-12 medium-6 large-6 column holder">
 
                     <img style="height: 75%; margin-left: 30%;" src="{% static 'img/academics.png' %}">
@@ -21,7 +21,7 @@
                 </div>
             </a>
 
-            <a href="{% url 'administrative' %}">
+            <a href="{% url 'staff_administrative' %}">
                 <div class="small-12 medium-6 large-6 column holder">
 
                     <img style="height: 75%; margin-left: 30%;" src="{% static 'img/cogs3.png' %}">

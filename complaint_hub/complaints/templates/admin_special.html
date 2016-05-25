@@ -8,11 +8,13 @@
     <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Special Request Form</h1>
 
     <section>
-        <form>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
             <div class="row">
                 <div class="medium-12 columns">
                     <label>Name
-                        <input type="text" placeholder="e.g John Doe" id="nameInput">
+                       
                     </label>
                 </div>
 
@@ -20,19 +22,21 @@
             <div class="row">
                 <div class="medium-6 columns">
                     <label>Matric
-                        <input type="text" placeholder="" id="matricInput">
+                        
                     </label>
                 </div>
                 <div class="medium-6 columns">
+                    {{ form.level.errors }}
                     <label>Level
-                        <input type="text" placeholder="" id="levelInput">
+                        {{ form.level }}
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="medium-12 columns">
+                    {{ form.department.errors }}
                     <label>Department
-                        <input type="text" placeholder="" id="departmentInput">
+                        {{ form.department }}
                     </label>
                 </div>
 
@@ -40,40 +44,36 @@
             <div class="row">
                 <div class="medium-12 columns">
                     <label>Program
-                        <input type="text" placeholder="" id="programInput">
+                        
                     </label>
                 </div>
 
             </div>
             <div class="row">
                 <div class="medium-6 columns">
+                    {{ form.hall.errors }}
                     <label>Hall
-                        <input type="text" placeholder="" id="HallInput">
+                        {{ form.hall }}
                     </label>
                 </div>
                 <div class="medium-6 columns">
+                    {{ form.room.errors }}
                     <label>Room
-                        <input type="text" placeholder="" id="RoomInput">
+                        {{ form.room }}
                     </label>
                 </div>
             </div>
 
-                <!--
-        <div class="medium-6 columns">
-    <label>Date
-        <input type="text" placeholder="">
-    </label>
-</div>
--->
             </div>
+            {{ form.request.errors }}
             <label>
                 Request
-                <textarea placeholder="Input Your Request Here" style="height: 240px; padding: 0px; margin-left: 1rem; width: 96.5%;" id="complainInput"></textarea>
+                {{ form.request }}
             </label>
 
 
             </div>
-            <button style="margin-left:1rem" type="button" class="success button" id="sendButton">Submit</button>
+            <button style="margin-left:1rem" type="submit" class="success button" id="sendButton">Submit</button>
         </form>
 
     </section>

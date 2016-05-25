@@ -30,5 +30,5 @@ urlpatterns = [
     url(r'^course_choices/$', get_course_choices, name='get_course_choices'),
     url(r'^program_choices/$', get_program, name='get_program'),
     url(r'^faq/$', faq, name='faq'),
-    url(r'^staff/details/$', staff, name='staff'),
+    url(r'^details/$', staff, name='staff'),
 ]

@@ -7,6 +7,7 @@ class AcademicComplaintForm(forms.ModelForm):
 		model = AcademicComplaint
 		exclude = [
 			'user',
+			'request_type',
 			'timestamp']
 		widgets = {
 			'course': forms.Select()

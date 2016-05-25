@@ -10,11 +10,10 @@
     <section>
         <form method="POST" action="">
             {{ form.non_field_errors }}
+            {% csrf_token %}
             <div class="row">
                 <div class="medium-6 columns">
-                {{ form.matric.errors }}
                     <label>Matric
-                        {{ form.matric }}
                     </label>
                 </div>
                 <div class="medium-6 columns">
@@ -75,7 +74,7 @@
                 Request
                 {{ form.request }}
             </label>
-            <button style="margin-left:1rem" type="button" class="success button" id="sendButton">Submit</button>
+            <button style="margin-left:1rem" type="submit" class="success button" id="sendButton">Submit</button>
         </form>
 
     </section>

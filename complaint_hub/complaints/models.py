@@ -6,29 +6,30 @@ from django.utils import timezone
 
 # Create your models here.
 EXEAT_TYPES = (
-	('1', 'Home'),
-	('2', 'Other'),
+	('Home', 'Home'),
+	('Other', 'Other'),
 	)
 
 SEMESTERS = (
-	('1', 'First Semester'),
-	('2', 'Second Semester')
+	('First Semester', 'First Semester'),
+	('Second Semester', 'Second Semester')
 	)
 
 LEVELS = (
-	('1', 'First Year'),
-	('2', 'Second Year'),
-	('3', 'Third Year'),
-	('4', 'Fourth Year'),
-	('5', 'Fifth Year')
+	('First Year', 'First Year'),
+	('Second Year', 'Second Year'),
+	('Third Year', 'Third Year'),
+	('Fourth Year', 'Fourth Year'),
+	('Fifth Year', 'Fifth Year')
 	)
+	
 
-class RequestType(models.Model):
-	"""Types of requests"""
-	request_type = models.CharField(max_length=30)
-
-	def __unicode__(self):
-		return self.request_type
+REQUEST_TYPE = (
+	('Makeup', 'Makeup'),
+	('Portal', 'Portal'),
+	('Special', 'Special'),
+	('Result', 'Result'),
+	)
 
 class Course(models.Model):
 	"""Types of users"""
@@ -95,10 +96,11 @@ class AcademicComplaint(models.Model):
 		'Program',
 		on_delete=models.CASCADE,
 		null=True)
-	course = models.CharField(max_length=50)
-	request_type = models.ForeignKey(
-		'RequestType',
-		on_delete=models.CASCADE)
+	course = models.ForeignKey(
+		'Course',
+		on_delete=models.CASCADE,
+		null=True)
+	request_type = models.CharField(max_length=50, choices=REQUEST_TYPE)
 	request = models.TextField(max_length=50)
 	course_lecturer = models.ForeignKey(
 		'StaffProfile',
@@ -108,7 +110,7 @@ class AcademicComplaint(models.Model):
 	timestamp = models.DateTimeField(default=timezone.now())
 
 	def __unicode__(self):
-		return str(self.user) + ": " + str(request_type)
+		return str(self.user.full_name) + ": " + self.request_type
 		
 class Exeat(models.Model):
 	user = models.ForeignKey(

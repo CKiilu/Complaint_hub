@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />    
+{% block css %}
+{% endblock %}
+</head>
+<body class="{% block bdclss %}{% endblock %}">
+<header class="{% block header %}{% endblock %}">
+        <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
+        </div>
+
+        <div class="top-bar" id="example-menu">
+            <div class="top-bar-left">
+
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <a href="{% url 'home' %}"><img src="{% static 'img/cu_logo.png' %}"></a>
+                    <!--                    <li class="menu-text">Site Title</li>-->
+
+                </ul>
+
+
+            </div>
+            <div class="top-bar-right">
+                <ul class="vertical medium-horizontal menu">
+                    <li><a href="{% url 'staff_home' %}">HOME</a></li>
+                    <li><a href="{% url 'staff_acad' %}">ACADEMICS</a></li>
+                    <li><a href="{% url 'staff_administrative' %}">ADMINISITRATIVE</a></li>
+                    <li><a href="{% url 'faq' %}">CONTACT US</a></li>
+                    <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+
+    </header>
+{% block content %}
+{% endblock %}
+<footer></footer>
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.min.js' %}"></script>
+    <script src="{% static 'js/foundation.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+
+{% block js %}
+{% endblock %}
+</body>
+
+</html>

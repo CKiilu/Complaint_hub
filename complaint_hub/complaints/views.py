@@ -11,6 +11,8 @@ import simplejson
 # Home
 @login_required()
 def home(request):
+	if StaffProfile.objects.filter(user=request.user).exists():
+		return redirect('staff_home')
 	context = {
 	}
 	return render(request, 'home.html', context)
@@ -54,11 +56,15 @@ def acad(request):
 
 def makeup(request):
 	form = AcademicComplaintForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
+		instance.request_type = "Makeup"
 		instance.save()
+		return redirect('acad')
 	else:
+		print [(field.label, field.errors) for field in form]
 		form = AcademicComplaintForm()
 	context = {
 	'form': form,
@@ -67,10 +73,13 @@ def makeup(request):
 
 def portal(request):
 	form = AcademicComplaintForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
+		instance.request_type = "Portal"
 		instance.save()
+		return redirect('acad')
 	else:
 		form = AcademicComplaintForm()
 	context = {
@@ -80,10 +89,13 @@ def portal(request):
 
 def special(request):
 	form = AcademicComplaintForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
+		instance.request_type = "Special"
 		instance.save()
+		return redirect('acad')
 	else:
 		form = AcademicComplaintForm()
 	context = {
@@ -93,10 +105,13 @@ def special(request):
 
 def verify(request):
 	form = AcademicComplaintForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
+		instance.request_type = "Result"
 		instance.save()
+		return redirect('acad')
 	else:
 		form = AcademicComplaintForm()
 	context = {
@@ -110,10 +125,12 @@ def administrative(request):
 
 def exeat(request):
 	form = ExeatForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
 		instance.save()
+		return redirect('administrative')
 	else:
 		form = ExeatForm()
 	context = {
@@ -123,10 +140,12 @@ def exeat(request):
 
 def work_study(request):
 	form = WorkStudyForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
 		instance.save()
+		return redirect('administrative')
 	else:
 		form = WorkStudyForm()
 	context = {
@@ -136,10 +155,12 @@ def work_study(request):
 
 def ppd(request):
 	form = PPDForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
 		instance.save()
+		return redirect('administrative')
 	else:
 		form = PPDForm()
 	context = {
@@ -149,10 +170,12 @@ def ppd(request):
 
 def admin_special(request):
 	form = SpecialAdmRequestForm(data=request.POST)
+	user = StudentProfile.objects.get(user=request.user.id)
 	if form.is_valid():
 		instance = form.save(commit=False)
-		instance.user = request.user
+		instance.user = user
 		instance.save()
+		return redirect('administrative')
 	else:
 		form = SpecialAdmRequestForm()
 	context = {
@@ -169,113 +192,73 @@ def staff_home(request):
 	return render(request, 'staff_home.html')
 
 def staff_acad(request):
-	return render(request, 'acad.html')
+	return render(request, 'staff_acad.html')
 
 def staff_makeup(request):
-	form = AcademicComplaintForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = AcademicComplaintForm()
+	complaints = AcademicComplaint.objects.filter(request_type="Makeup").all()
+	
 	context = {
-	'form': form,
+	'complaints': complaints,
 	}
 	return render(request, 'make_up_staff.html', context)
 
 def staff_portal(request):
-	form = AcademicComplaintForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = AcademicComplaintForm()
+	complaints = AcademicComplaint.objects.filter(request_type="Portal").all()
+	
 	context = {
-	'form': form,
+	'complaints': complaints,
 	}
 	return render(request, 'portal_staff.html', context)
 
 def staff_special(request):
-	form = AcademicComplaintForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = AcademicComplaintForm()
+	complaints = AcademicComplaint.objects.filter(request_type="Special").all()
+	
 	context = {
-	'form': form,
+	'complaints': complaints,
 	}
 	return render(request, 'special_staff.html', context)
 
 def staff_verify(request):
-	form = AcademicComplaintForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = AcademicComplaintForm()
+	complaints = AcademicComplaint.objects.filter(request_type="Result").all()
+	
 	context = {
-	'form': form,
+	'complaints': complaints,
 	}
 	return render(request, 'result_staff.html', context)
 
 # Adminstrative
 def staff_administrative(request):
-	return render(request, 'admin.html')
+	return render(request, 'staff_admin.html')
 
 def staff_exeat(request):
-	form = ExeatForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = ExeatForm()
+	complaints = Exeat.objects.all()
+	
 	context = {
-		'form': form, 
+	'complaints': complaints,
 	}
 	return render(request, 'exeat_staff.html', context)
 
 def staff_work_study(request):
-	form = WorkStudyForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = WorkStudyForm()
+	complaints = WorkStudy.objects.all()
+	
 	context = {
-		'form': form, 
+	'complaints': complaints,
 	}
-	return render(request, 'workstudy_staff.html', context)
+	return render(request, 'work_study_staff.html', context)
 
 def staff_ppd(request):
-	form = PPDForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = PPDForm()
+	complaints = PPD.objects.all()
+	
 	context = {
-		'form': form, 
+	'complaints': complaints,
 	}
 	return render(request, 'PPD_staff.html', context)
 
 def staff_admin_special(request):
-	form = SpecialAdmRequestForm(data=request.POST)
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.user = request.user
-		instance.save()
-	else:
-		form = SpecialAdmRequestForm()
+	complaints = SpecialAdmRequest.objects.all()
+	
 	context = {
-		'form': form, 
+	'complaints': complaints,
 	}
 	return render(request, 'special_admin_staff.html', context)
 	
