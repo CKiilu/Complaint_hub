@@ -81,12 +81,12 @@
     </section>
 {% endblock %}
 
-
 {% block js %}
 <script type="text/javascript" >
     $(document).ready(function(){
         $('#id_course').append($('<option>--------</option>'));
-        getSubject("{% url 'get_course_choices' %}");
+        getProgram("{% url 'get_program' %}");
+        getCourses("{% url 'get_course_choices' %}");
     });
 </script>
 {% endblock %}

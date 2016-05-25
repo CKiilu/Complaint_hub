@@ -39,3 +39,15 @@ class WorkStudyForm(forms.ModelForm):
 		exclude = [
 			'user',
 			'timestamp']
+			
+class StaffProfileForm(forms.ModelForm):
+	class Meta:
+		model = StaffProfile
+		exclude = [
+			'user']
+			
+class StudentProfileForm(forms.ModelForm):
+	class Meta:
+		model = StudentProfile
+		exclude = [
+			'user']

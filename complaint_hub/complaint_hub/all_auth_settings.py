@@ -7,7 +7,7 @@
 # redirect to login
 LOGIN_URL = '/accounts/login/'
 # redirect to home
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/user_details/'
 
 # Specifies the login method to use -- whether the user logs in by entering
 # their username, e-mail address, or either one of both. Possible values

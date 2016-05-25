@@ -23,11 +23,6 @@ LEVELS = (
 	('5', 'Fifth Year')
 	)
 
-USER_TYPES = (
-	('1', 'Student'),
-	('2', 'Staff')
-	)
-
 class RequestType(models.Model):
 	"""Types of requests"""
 	request_type = models.CharField(max_length=30)
@@ -58,13 +53,12 @@ class Department(models.Model):
 		return self.department
 		
 
-class UserProfile(models.Model):
+class StudentProfile(models.Model):
 	""" User Details """
 	user = models.OneToOneField(
 		settings.AUTH_USER_MODEL,
 		on_delete=models.CASCADE)
 	matric = models.CharField(max_length=10)
-	category = models.CharField(max_length=50, choices=USER_TYPES)
 	full_name = models.CharField(max_length=50)
 	level = models.CharField(max_length=50, choices=LEVELS)
 	program = models.ForeignKey(
@@ -74,11 +68,21 @@ class UserProfile(models.Model):
 
 	def __unicode__(self):
 		return str(self.user)
+		
 
+class StaffProfile(models.Model):
+	""" User Details """
+	user = models.OneToOneField(
+		settings.AUTH_USER_MODEL,
+		on_delete=models.CASCADE)
+	full_name = models.CharField(max_length=50, unique=True)
+	
+	def __unicode__(self):
+		return str(self.full_name)
 class AcademicComplaint(models.Model):
 	""" Academic complaints """
 	user = models.ForeignKey(
-		'UserProfile',
+		'StudentProfile',
 		on_delete=models.CASCADE)
 	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
@@ -96,7 +100,11 @@ class AcademicComplaint(models.Model):
 		'RequestType',
 		on_delete=models.CASCADE)
 	request = models.TextField(max_length=50)
-	course_lecturer = models.CharField(max_length=50)
+	course_lecturer = models.ForeignKey(
+		'StaffProfile',
+		on_delete=models.CASCADE,
+		to_field='full_name'
+		)
 	timestamp = models.DateTimeField(default=timezone.now())
 
 	def __unicode__(self):
@@ -104,7 +112,7 @@ class AcademicComplaint(models.Model):
 		
 class Exeat(models.Model):
 	user = models.ForeignKey(
-		'UserProfile',
+		'StudentProfile',
 		on_delete=models.CASCADE)
 	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
@@ -122,7 +130,7 @@ class Exeat(models.Model):
 		
 class WorkStudy(models.Model):
 	user = models.ForeignKey(
-		'UserProfile',
+		'StudentProfile',
 		on_delete=models.CASCADE)
 	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
@@ -139,7 +147,7 @@ class WorkStudy(models.Model):
 		
 class PPD(models.Model):
 	user = models.ForeignKey(
-		'UserProfile',
+		'StudentProfile',
 		on_delete=models.CASCADE)
 	level = models.CharField(max_length=50, choices=LEVELS)
 	hall = models.CharField(max_length=50)
@@ -153,7 +161,7 @@ class PPD(models.Model):
 		
 class SpecialAdmRequest(models.Model):
 	user = models.ForeignKey(
-		'UserProfile',
+		'StudentProfile',
 		on_delete=models.CASCADE)
 	level = models.CharField(max_length=50, choices=LEVELS)
 	department = models.ForeignKey(
