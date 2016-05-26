@@ -160,11 +160,19 @@ h1 {
 
 /******************************************************************forms*********************************************************************************/
 
-.content {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    width: 400px;
-    margin: 0 auto;
+@media all and (min-width:440px) {
+    .content {
+        text-align: center;
+        width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width:440px) {
+    .content {
+        width: 90%;
+        height: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
 }
