@@ -12,17 +12,10 @@
             {% csrf_token %}
             {{ form.non_field_errors }}
             <div class="row">
-                <div class="medium-12 columns">
-                    <label>Name
-                        
-                    </label>
-                </div>
-
-            </div>
-            <div class="row">
                 <div class="medium-6 columns">
-                    <label>Matric
-                        
+                    {{ form.department.errors }}
+                    <label>Department
+                        {{ form.department }}
                     </label>
                 </div>
                 <div class="medium-6 columns">
@@ -31,23 +24,6 @@
                         {{ form.level }}
                     </label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="medium-12 columns">
-                    {{ form.department.errors }}
-                    <label>Department
-                        {{ form.department }}
-                    </label>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="medium-12 columns">
-                    <label>Program
-                        
-                    </label>
-                </div>
-
             </div>
             <div class="row">
                 <div class="medium-6 columns">
@@ -62,20 +38,6 @@
                         {{ form.session }}
                     </label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="medium-6 columns">
-                    <label>Course
-                        
-                    </label>
-                </div>
-                <!--
-        <div class="medium-6 columns">
-    <label>Date
-        <input type="text" placeholder="">
-    </label>
-</div>
--->
             </div>
             <label>
                 {{ form.application.errors }}

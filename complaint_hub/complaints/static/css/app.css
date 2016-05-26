@@ -3,15 +3,19 @@
 .row {
     max-width: none;
 }
+
 .top-bar {
     margin: 0;
 }
+
 .menu > li > a {
     line-height: 3;
 }
+
 hr {
     max-width: 100%;
 }
+
 
 /******************************************************************index*********************************************************************************/
 
@@ -20,6 +24,7 @@ hr {
     color: #888;
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .main {
     max-width: 500px;
     height: 440px;
@@ -29,6 +34,7 @@ hr {
     border: 1px solid white;
     border-radius: 10px;
 }
+
 .button.large {
     font-size: 1.25rem;
     margin-left: 56%;
@@ -36,29 +42,35 @@ hr {
     border-radius: 10px;
     left: 55%;
 }
+
 hr {
     width: 100%;
     height: 1px;
     background: #fff
 }
+
 .loginz {
     font-weight: 600;
     text-align: center;
     color: white;
     font-size: 2em;
 }
+
 .label_heading {
     color: white;
     margin-top: 9%;
     font-size: 1.75rem;
 }
+
 .button {
     background: #62ba17;
 }
+
 .button:hover {
     background: #800080;
     border: 1px solid white;
 }
+
 
 /******************************************************************Home_BODY*********************************************************************************/
 
@@ -70,14 +82,17 @@ hr {
     background-color: beige;
     margin: auto 5%;
 }
+
 .home_header {
     height: 100px;
 }
+
 .holder {
     border: 0.5px solid black;
     height: 200px;
     font-size: 2em;
 }
+
 .holder:hover {
     background-color: grey;
     opacity: 0.8;
@@ -85,41 +100,50 @@ hr {
     font-weight: 900;
     font-size: 2em;
 }
+
 .home_intro {
     padding: 5%;
     margin-top: 5%;
     border: 0.5px solid black;
 }
+
 instruction_home {
     margin-top: 5%;
 }
+
 .top-bar,
 .top-bar ul {
     background-color: transparent;
 }
+
 h1 {
     font-weight: bold;
     font-size: 2em
 }
+
 .x {
     display: none;
     padding: 5%;
 }
+
 .options {
     margin-top: 10%;
     border: 0.5px solid black;
 }
+
 
 /******************************************************************message*********************************************************************************/
 
 .thanks {
     margin: 10% 20%;
 }
+
 .thanks h1 {
     font-size: 5rem;
     align-content: center;
     text-align: center;
 }
+
 
 /******************************************************************contactus*********************************************************************************/
 
@@ -131,4 +155,16 @@ h1 {
     border: 1px solid beige;
     border-radius: 10px;
     box-shadow: 1px 1px 10px #888888;
+}
+
+
+/******************************************************************forms*********************************************************************************/
+
+.content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
 }

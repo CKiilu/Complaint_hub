@@ -12,8 +12,9 @@
             {% csrf_token %}
             <div class="row">
                 <div class="medium-6 columns">
-                    <label>Matric
-                        
+                    {{ form.department.errors }}
+                    <label>Department
+                        {{ form.department }}
                     </label>
                 </div>
                 <div class="medium-6 columns">
@@ -22,24 +23,6 @@
                         {{ form.level }}
                     </label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="medium-12 columns">
-                    {{ form.department.errors }}
-                    <label>Department
-                        {{ form.department }}
-                    </label>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="medium-12 columns">
-                    
-                    <label>Program
-                        
-                    </label>
-                </div>
-
             </div>
             <div class="row">
                 <div class="medium-6 columns">
@@ -52,12 +35,6 @@
                     {{ form.destination.errors }}
                     <label>Destination
                         {{ form.destination }}
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="medium-6 columns">
-                    <label>Course
                     </label>
                 </div>
             </div>
