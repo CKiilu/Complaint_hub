@@ -107,7 +107,7 @@ class AcademicComplaint(models.Model):
 		on_delete=models.CASCADE,
 		to_field='full_name'
 		)
-	timestamp = models.DateTimeField(default=timezone.now())
+	timestamp = models.DateTimeField(default=timezone.now)
 
 	def __unicode__(self):
 		return str(self.user.full_name) + ": " + self.request_type
@@ -125,7 +125,7 @@ class Exeat(models.Model):
 	destination = models.CharField(max_length=50)
 	application = models.TextField()
 	parent_contact = models.CharField(max_length=16)
-	timestamp = models.DateTimeField(default=timezone.now())
+	timestamp = models.DateTimeField(default=timezone.now)
 
 	def __unicode__(self):
 		return str(self.user) + '-' + self.level +": " + self.exeat_type
@@ -142,7 +142,7 @@ class WorkStudy(models.Model):
 	semester = models.CharField(max_length=50, choices=SEMESTERS)
 	session = models.CharField(max_length=50)
 	application = models.TextField()
-	timestamp = models.DateTimeField(default=timezone.now())
+	timestamp = models.DateTimeField(default=timezone.now)
 	
 	def __unicode__(self):
 		return str(self.user) + '-' + self.level 
@@ -156,7 +156,7 @@ class PPD(models.Model):
 	room = models.CharField(max_length=50)
 	site = models.CharField(max_length=50)
 	request = models.TextField()
-	timestamp = models.DateTimeField(default=timezone.now())
+	timestamp = models.DateTimeField(default=timezone.now)
 	
 	def __unicode__(self):
 		return str(self.user) + '-' + self.hall + ", " + self.room + ", " + self.site
@@ -173,7 +173,7 @@ class SpecialAdmRequest(models.Model):
 	hall = models.CharField(max_length=50)
 	room = models.CharField(max_length=50)
 	request = models.TextField()
-	timestamp = models.DateTimeField(default=timezone.now())
+	timestamp = models.DateTimeField(default=timezone.now)
 	
 	def __unicode__(self):
 		return str(self.user) 

@@ -110,4 +110,3 @@ SOCIALACCOUNT_AVATAR_SUPPORT = True
 #         }
 #     }
 
-SITE_ID=1

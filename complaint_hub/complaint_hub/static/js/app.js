@@ -10,7 +10,7 @@ function getProgram(path) {
             },
             success: function(data) {
                 $('#id_program').empty()
-                $('#id_program').append($('<option>--------</option>'));
+                $('#id_program').append($('<option>---------</option>'));
                 for (var item in data) {
                     $('#id_program').append($('<option>' + data[item] + '</option>').val(item));
                 }
@@ -29,7 +29,7 @@ function getCourses(path) {
             },
             success: function(data) {
                 $('#id_course').empty()
-                $('#id_course').append($('<option>--------</option>'));
+                $('#id_course').append($('<option>---------</option>'));
                 for (var item in data) {
                     $('#id_course').append($('<option>' + data[item] + '</option>').val(item));
                 }
