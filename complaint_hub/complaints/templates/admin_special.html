@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- Special Request Validation{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Special Request Form</h1>
+
+    <section>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="row">
+                <div class="medium-6 columns">
+                     {{ form.department.errors }}
+                    <label>Department
+                        {{ form.department }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                    {{ form.level.errors }}
+                    <label>Level
+                        {{ form.level }}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                    {{ form.hall.errors }}
+                    <label>Hall
+                        {{ form.hall }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                    {{ form.room.errors }}
+                    <label>Room
+                        {{ form.room }}
+                    </label>
+                </div>
+            </div>
+
+            </div>
+            {{ form.request.errors }}
+            <label>
+                Request
+                {{ form.request }}
+            </label>
+
+
+            </div>
+            <button style="margin-left:1rem" type="submit" class="success button" id="sendButton">Submit</button>
+        </form>
+
+    </section>
+{% endblock %}

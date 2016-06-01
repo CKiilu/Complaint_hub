@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <!--    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>-->
+</head>
+
+<body>
+    <header style="margin-left:20%; padding-top:10%;"><a classhref="http://cu-complain.azurewebsites.net/home.html">Go Back</a></header>
+    <div class="thanks">
+        <h1>Thank You</h1>
+        <h4>We assure you your message will be treated immediately, for further complaints please feel free to send another message</h4>
+    </div>
+
+
+
+
+    <footer>
+    </footer>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        $(function() {
+            $.fn.showField = function() {
+                var selectVal = document.getElementById(this.val() + 'Div');
+                return this.each(function() {
+                    $(selectVal).show().siblings('div').hide();
+                });
+            };
+            $('select#reportsSelect').change(function() {
+                $(this).showField();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

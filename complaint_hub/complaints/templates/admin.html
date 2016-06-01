@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- ADMINISTRATIVE{% endblock %}
+{% block bdclss %}admin_body{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+<h1>Administrative Complaint section</h1>
+    <h5>Please pick the concerned party to forward your complaint too</h5>
+
+    <div class="row">
+        <a href="{% url 'exeat' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">-->
+                <p>Exeat Application</p>
+
+            </div>
+        </a>
+
+        <a href="{% url 'work_study' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">-->
+                <p>Work Study Application</p>
+
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a href="{% url 'ppd' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">-->
+                <p>PPD Infrastructure</p>
+
+            </div>
+        </a>
+
+        <a href="{% url 'admin_special' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--               <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">-->
+                <p>Special requests</p>
+
+            </div>
+        </a>
+    </div>
+
+  {% endblock %}

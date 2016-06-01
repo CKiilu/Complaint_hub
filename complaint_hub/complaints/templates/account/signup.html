@@ -1,0 +1,48 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Sign Up" %}</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{% url 'more_details' %}" />
+  {% endif %}
+  <label for="">Check to sign up as staff.<input type="checkbox" id="checkie" value="off"></label>
+  <label for="" class="passie">Staff Password <input type="password" class="passie" id="pass"/></label>
+  <button class="button" type="submit">{% trans "Sign Up" %} &raquo;</button>
+</form>
+
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.passie').hide();
+    $('#checkie').change(function(){
+      var current =$(this).val();
+      if(current == 'off'){
+        $('#checkie').val('on');
+        $('.passie').show(1000);
+      } else{
+        $('#checkie').val('off');
+        $('.passie').hide(1000);
+        $('#pass').val('student ');
+      }
+    });
+      $('form').submit(function(event){
+        $.ajax({
+          url:"{% url 'staff' %}",
+          type:'GET',
+          data:{staff: $('#pass').val()},
+        });
+      });
+  })
+</script>
+{% endblock %}

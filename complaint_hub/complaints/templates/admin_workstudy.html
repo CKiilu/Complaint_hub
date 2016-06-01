@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- Work Study Application{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student Work Study Application Form</h1>
+
+    <section>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="row">
+                <div class="medium-6 columns">
+                    {{ form.department.errors }}
+                    <label>Department
+                        {{ form.department }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                    {{ form.level.errors }}
+                    <label>Level
+                        {{ form.level }}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-6 columns">
+                    {{ form.semester.errors }}
+                    <label>Semester
+                        {{ form.semester }}
+                    </label>
+                </div>
+                <div class="medium-6 columns">
+                    {{ form.session.errors }}
+                    <label>Session
+                        {{ form.session }}
+                    </label>
+                </div>
+            </div>
+            <label>
+                {{ form.application.errors }}
+                Application
+                {{ form.application }}
+            </label>
+
+            </div>
+            <button style="margin-left:1rem" type="submit" class="success button" id="sendButton">Submit</button>
+        </form>
+
+    </section>
+    
+{% endblock %}

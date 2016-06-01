@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- Home{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+{% block header %}home_header{% endblock %}
+
+{% block content %}
+
+    <section class="instruction_home">
+        <h1>Please choose the category of your question, we are waiting to hear from you</h1>
+    </section>
+    <section class="home_main">
+
+        <div class="row">
+            <a href="{% url 'acad' %}">
+                <div class="small-12 medium-6 large-6 column holder">
+
+                    <img style="height: 75%; margin-left: 30%;" src="{% static 'img/academics.png' %}">
+                    <p>ACADEMICS</p>
+
+                </div>
+            </a>
+
+            <a href="{% url 'administrative' %}">
+                <div class="small-12 medium-6 large-6 column holder">
+
+                    <img style="height: 75%; margin-left: 30%;" src="{% static 'img/cogs3.png' %}">
+                    <p>ADMINISTRATION</p>
+
+                </div>
+            </a>
+        </div>
+
+    </section>
+    <section class="home_intro">
+        <div>
+            <p>Lorem ipsum dolor sit amet, cetero mentitum an qui. Eum no hinc quodsi facilisis. Qui doctus partiendo cotidieque no. Qui quod voluptaria honestatis te, dicta eruditi atomorum in usu. In mutat homero doctus nam, ex ius esse veniam vivendo. Meliore periculis consequat ut sed. Legimus conclusionemque has no, solet aliquip eu qui. Alia ullum numquam vim et, oratio voluptua et mea. Sea minim admodum civibus no, vix nominavi epicurei in. Ei wisi tractatos disputationi mea. In inermis adipisci suavitate ius, vis ut nonumy oporteat, graeco denique ei eam. Id mei ponderum explicari appellantur. Vis id facer zril, posse necessitatibus per te. Ad ludus iisque mea, in vel unum epicurei, dolorem ancillae inimicus has at. Duo at propriae placerat, eos et voluptua insolens. Has similique scribentur referrentur an, mea te mollis habemus efficiendi. An efficiendi referrentur duo. Ei his quidam interesset, veniam deleniti urbanitas an eum. Quis salutandi eu mea, ne duo esse accusam ullamcorper, quod volumus temporibus eam et. An sit fabellas assentior complectitur, duis saepe ea nec. Usu an numquam prodesset referrentur, iudico bonorum alienum no vim. No wisi munere pericula est, verear graecis ex his. Vero vitae animal te vel. Ne blandit electram torquatos eum, te aliquam nostrum sed. Usu an eius quaerendum, an mel veniam labore appareat. Latine numquam feugait qui te, ea graeco quodsi mea, ut mel propriae appareat eleifend.</p>
+        </div>
+
+    </section>
+
+{% endblock %}

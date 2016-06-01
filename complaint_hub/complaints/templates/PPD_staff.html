@@ -1,0 +1,28 @@
+{% extends 'staff_base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- PPD Requests{% endblock %}
+{% block bdclss %}home_body{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 10%; margin-top: 10%;">Student PPD Request Resolution Form</h1>
+
+
+    <h3>This are the pending requests for student validation.</h3>
+
+{% for complaint in complaints %}
+    <div style="border: 1px solid black; margin-bottom:5%; padding: 5%;">
+    <p>Name: {{ complaint.user.full_name }}</p>
+    <p>Level: {{ complaint.level }}</p>
+    <p>Hall: {{ complaint.hall }}</p>
+    <p>Room: {{ complaint.room }}</p>
+    <p>Site: {{ complaint.site }}</p>
+    <p>Request: {{ complaint.request }}</p>
+    <form method="GET" action="">
+    <button style="float:right;" name="id" value="{{ complaint.id }}">Delete</button>
+    </form>
+    <hr style="max-width:100%">
+    </div>
+{% endfor %}
+
+{% endblock %}

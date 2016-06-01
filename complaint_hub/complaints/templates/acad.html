@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Complaint Hub- ACADEMICS{% endblock %}
+{% block bdclss %}acad_body{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+    <h1>Academic Complaint section</h1>
+    <h5>Please pick the concerned party to forward your complaint too</h5>
+
+    <div class="row">
+        <a href="{% url 'makeup' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">-->
+                <p>Students Make up</p>
+
+            </div>
+        </a>
+
+        <a href="{% url 'portal' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">-->
+                <p>Portal Issues</p>
+
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a href="{% url 'special' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--                    <img style="height: 75%; margin-left: 30%;" src="img/academics.png">-->
+                <p>Special Requests</p>
+
+            </div>
+        </a>
+
+        <a href="{% url 'verify' %}">
+            <div class="small-12 medium-6 large-6 column holder">
+
+                <!--               <img style="height: 75%; margin-left: 30%;" src="img/cogs3.png">-->
+                <p>Result Verification</p>
+
+            </div>
+        </a>
+    </div>
+{% endblock %}
